@@ -1,4 +1,5 @@
-// import { ArrowBigRight, ArrowBigLeft } from 'lucide-react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleArrowLeft, faCircleArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 function Sliders({
     id, image, name, newImageIndex, setNewImageIndex, imagesIndex, setPlaces, places, changeImage }) {
@@ -42,12 +43,12 @@ function Sliders({
             <button style={{ left: '29%' }}
                 className='arrow-btn'
                 onClick={() => previousImage(id)}>
-                {/* <ArrowBigLeft /> */}
+                <FontAwesomeIcon icon={faCircleArrowLeft} />
             </button>
             <button style={{ right: '29%' }}
                 className='arrow-btn'
                 onClick={() => nextImage(id)}>
-                {/* <ArrowBigRight /> */}
+                <FontAwesomeIcon icon={faCircleArrowRight} />
             </button>
         </div>
     );
