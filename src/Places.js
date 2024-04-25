@@ -1,11 +1,9 @@
 import { useState } from 'react';
 import { data } from './Data.js';
-import Sliders from './Sliders.js';
+import NewSliders from './NewSliders.js';
 
 function Places() {
     const [places, setPlaces] = useState(data);
-    const [imagesIndex, setImagesIndex] = useState(0);
-    const [newImageIndex, setNewImageIndex] = useState(0);
 
     const deletePlace = (id) => {
         const newPlaces = places.filter(place => place.id !== id);
@@ -28,7 +26,7 @@ function Places() {
                             <h2>{id} - {name}</h2>
                             <p>{province}</p>
                             <p>{description}</p>
-                            <Sliders id={id} image={image} name={name} newImageIndex={newImageIndex} setNewImageIndex={setNewImageIndex} setImagesIndex={setImagesIndex} imagesIndex={imagesIndex} setPlaces={setPlaces} places={places} changeImage={place.changeImage} />
+                            <NewSliders images={image} name={name} />
                             <button onClick={() => deletePlace(id)}>Mark as visited</button>
                         </div>
                     );
